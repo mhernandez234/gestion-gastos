@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
             item.innerHTML = `
                 <td class="codigo" data-label="Codigo:">${articulo.codigo}</td>
-                <td class="codigo" data-label="Articulo:">${articulo.nombre}</td>
+                <td class="codigo" data-label="Nombre:">${articulo.nombre}</td>
                 <td class="codigo" data-label="Categoria:">${articulo.categoria}</td>
                 <td class="codigo" data-label="Moneda:">${articulo.moneda}</td>
                 <td class="codigo" data-label="Precio:">${articulo.precio}</td>

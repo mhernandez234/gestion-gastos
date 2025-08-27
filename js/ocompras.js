@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function(){
             item.className = 'registro';
 
             item.innerHTML = `
-                <td class="nro" data-label="Nro OC:">${ocompra.oc}</td>
-                <td class="prov" data-label="Proveedor:">${ocompra.prov}</td>
+                <td class="nro" data-label="Nro Transaccion:">${ocompra.oc}</td>
+                <td class="prov" data-label="Gasto:">${ocompra.prov}</td>
                 <td class="fec" data-label="Fecha:">${ocompra.fec}</td>
             `;
             ocompList.appendChild(item);
