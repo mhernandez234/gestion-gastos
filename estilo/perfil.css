@@ -1,0 +1,130 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #005f73;
+  color: #fff;
+  padding: 15px 20px;
+}
+
+.nav-bar h1 {
+  font-size: 1.5rem;
+}
+
+.nav-bar input[type="button"] {
+  background-color: #0a9396;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin-left: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-bar input[type="button"]:hover {
+  background-color: #94d2bd;
+  color: #000;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* FOTO PERFIL */
+.container img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  border: 3px solid #0a9396;
+}
+
+/* LABELS E INPUTS */
+label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+input[type="button"] {
+  background-color: #0a9396;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+input[type="button"]:hover {
+  background-color: #94d2bd;
+  color: #000;
+}
+
+/* MODAL */
+.modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* FORMULARIO MODAL */
+#form-contrasena {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+#form-contrasena h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #005f73;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 30px;
+  background: #005f73;
+  height: 60px;
+}

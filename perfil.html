@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="estilo/perfil.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <h1>Perfil</h1>
+        <input type="button" id="btn-opciones">
+        <input type="button" value="Salir" id="salir">
+    </nav>
+    <main class="container">
+        <img src="img/logo-perfil.webp" alt="Foto Perfil">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" disabled>
+        <label for="mail">Correo:</label>
+        <input type="email" id="mail" disabled>
+        <label for="tel">Telefono:</label>
+        <input type="text" id="tel" disabled>
+        <input type="button" value="Cambiar contraseña" id="cambiar-contrasena">
+        <input type="button" value="Opciones Avanzadas" id="op-avanzadas">
+        <div class="modal">
+            <form action="" id="form-contrasena">
+                <h2>Cambiar Contraseña</h2>
+                <label for="con-anterior">Contraseña Actual:</label>
+                <input type="password" id="con-anterior">
+                <label for="con-nueva">Nueva Contraseña:</label>
+                <input type="password" id="con-nueva">
+                <label for="con-repetir">Repetir Contraseña:</label>
+                <input type="password" id="con-repetir">
+                <input type="button" value="Guardar" id="guardar">
+            </form>
+        </div>
+    </main>
+    <footer class="footer"></footer>
+    <script src="js/perfil.js"></script>
+</body>
+</html>

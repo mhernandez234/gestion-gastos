@@ -1,0 +1,200 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body y contenedor principal */
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* Navbar */
+nav.nav {
+    background-color: #005f73;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* permite que los items bajen en pantallas pequeñas */
+}
+
+/* Título */
+nav.nav h1 {
+    font-size: 24px;
+}
+
+/* Menú izquierdo */
+nav.nav .menu-left ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+/* Menú derecho */
+nav.nav .menu-right ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+/* Items del menú */
+nav.nav ul li {
+    position: relative;
+}
+
+/* Enlaces y botones */
+nav.nav ul li a,
+nav.nav ul li button {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    border-radius: 4px;
+}
+
+nav.nav ul li a:hover,
+nav.nav ul li button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Botón Cerrar Sesión */
+nav.nav ul li button#salir {
+    background-color: #005060;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+nav.nav ul li button#salir:hover {
+    background-color: #003d49;
+    transform: scale(1.05);
+}
+
+/* Submenú */
+nav.nav ul li .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #005f73;
+    min-width: 180px;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+nav.nav ul li .submenu li {
+    display: block;
+}
+
+nav.nav ul li .submenu li a {
+    padding: 10px 15px;
+}
+
+/* Mostrar submenú al hacer clic */
+nav.nav ul li.open .submenu {
+    display: block;
+}
+
+/* Main */
+main.container {
+    padding: 20px;
+}
+
+/* Footer */
+footer.footer {
+    background-color: #005f73;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ---------------- RESPONSIVIDAD ---------------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+    nav.nav h1 {
+        font-size: 20px;
+    }
+
+    nav.nav .menu-left ul,
+    nav.nav .menu-right ul {
+        gap: 10px;
+    }
+
+    nav.nav ul li a,
+    nav.nav ul li button {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+    nav.nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    nav.nav h1 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    /* Menús apilados */
+    nav.nav .menu-left ul,
+    nav.nav .menu-right ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+
+    nav.nav ul li {
+        width: 100%;
+    }
+
+    nav.nav ul li a,
+    nav.nav ul li button {
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+    }
+
+    /* Botón salir ocupa todo el ancho */
+    nav.nav ul li button#salir {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Submenú en móviles ocupa ancho completo */
+    nav.nav ul li .submenu {
+        position: static;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    nav.nav ul li .submenu li a {
+        padding: 10px;
+    }
+
+    /* Footer más compacto */
+    footer.footer {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

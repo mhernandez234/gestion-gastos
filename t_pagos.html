@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos</title>
+    <link rel="stylesheet" href="estilo/ocompras.css">
+</head>
+<body>
+    <div class="nav">
+        <h1>Pagos</h1>
+        <input type="button" value="Salir" id="salir">
+    </div>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nro Trasnsacción:</th>
+                    <th>Gasto</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody id="lista-ocompras"></tbody>
+        </table>
+        <div class="modal">
+            <form action="" id="form">
+                <div class="cabezal">
+                    <h2>Pago</h2>
+                    <div class="input-corto">
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" id="fecha" name="fecha">
+                    </div>
+                    <div class="input-medio">
+                        <label for="nro-oc">Nro Trasnsacción:</label>
+                        <input type="text" id="nro-oc" name="nro-oc">
+                    </div>
+                    <div class="input-largo">
+                        <label for="proveedor">Proveedor</label>
+                        <input type="text" id="proveedor" name="proveedor">
+                    </div>
+                </div>
+                <div class="grilla">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Articulo</th>
+                                <th>Descripcion</th>
+                                <th>Moneda</th>
+                                <th>precio</th>
+                            </tr>   
+                        </thead>
+                        <tbody class="tbody-grilla">
+                            <tr>
+                                <td><input type="text" class="cod-art"></td>
+                                <td><input type="text" class="desc-art" disabled></td>
+                                <td><input type="text" class="moneda"></td>
+                                <td><input type="number" class="precio"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="button" value="Agregar fila" id="agregar-fila">
+                </div>
+                <input type="button" value="Aceptar" id="aceptar">
+                <input type="button" value="Cancelar" id="cancelar">
+            </form>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+<script src="js/ocompras.js"></script>
+</html>

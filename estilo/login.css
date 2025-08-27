@@ -1,0 +1,100 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #005f73, #0a9396);
+    color: #333;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Nav (vacío de momento, pero queda como header) */
+.nav {
+    background-color: #005f73;
+    height: 60px;
+}
+
+/* Contenedor centrado */
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Formulario */
+form {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+/* Título */
+form h2 {
+    margin-bottom: 20px;
+    color: #005f73;
+}
+
+/* Inputs */
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+    border-color: #0a9396;
+}
+
+/* Botón */
+#iniciar {
+    width: 100%;
+    padding: 10px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #0a9396;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#iniciar:hover {
+    background-color: #005f73;
+}
+
+/* Textos debajo */
+form p {
+    font-size: 14px;
+    margin: 10px 0 0;
+}
+
+form a {
+    color: #0a9396;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background-color: #073b4c;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}

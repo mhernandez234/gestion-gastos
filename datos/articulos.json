@@ -1,0 +1,39 @@
+{   
+    "articulos": [
+        {
+            "codigo": 10012,
+            "nombre": "Articulo1",
+            "categoria": "CAT01",
+            "moneda": "UYU",
+            "precio": 13500
+        },
+        {
+            "codigo": 10013,
+            "nombre": "Articulo2",
+            "categoria": "CAT01",
+            "moneda": "USD",
+            "precio": 255
+        },
+        {
+            "codigo": 20110,
+            "nombre": "Articulo3",
+            "categoria": "CAT01",
+            "moneda": "UYU",
+            "precio": 10450
+        },
+        {
+            "codigo": 30011,
+            "nombre": "Articulo4",
+            "categoria": "CAT02",
+            "moneda": "USD",
+            "precio": 305
+        },
+        {
+            "codigo": 30012,
+            "nombre": "Articulo5",
+            "categoria": "CAT02",
+            "moneda": "USD",
+            "precio": 305
+        }
+    ]
+}

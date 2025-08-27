@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastos</title>
+    <link rel="stylesheet" href="estilo/articulos.css">
+</head>
+<body>
+    <div class="nav">
+        <h1>Gastos</h1>
+        <input type="button" value="Salir" id="salir">
+    </div>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>Categoría</th>
+                    <th>Moneda</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody id="lista-articulos"></tbody>
+        </table>
+        <div class="modal">
+            <form action="" id="form">
+                <h2>Gasto</h2>
+                <label for="art">Código: </label>
+                <input type="text" id="art">
+                <label for="nom">Descripción: </label>
+                <input type="text" id="nom">
+                <label for="cat">Categoria: </label>
+                <input type="text" id="cat">
+                <label for="precio">Precio: </label>
+                <input type="text" id="precio">
+                <input type="button" value="Aceptar" id="aceptar">
+                <input type="button" value="Cancelar" id="cancelar">
+            </form>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+<script src="js/articulos.js"></script>
+</html>

@@ -1,0 +1,227 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* Barra superior */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #005f73;
+  color: white;
+  padding: 15px 20px;
+  flex-wrap: wrap; /* evita desbordes en móviles */
+}
+
+.nav h1 {
+  font-size: 1.5rem;
+}
+
+#salir {
+  padding: 8px 15px;
+  border: none;
+  background: #005060;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#salir:hover {
+  background-color: #003d49;
+  transform: scale(1.05);
+}
+
+/* Contenedor principal */
+.container {
+  padding: 20px;
+  overflow-x: auto; /* permite desplazar tablas en móviles */
+}
+
+/* Tabla de artículos */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+th {
+  background: #0a9396;
+  font-weight: bold;
+  color: white;
+}
+
+tr:hover {
+  background-color: #e0f7fa;
+}
+
+/* Modal */
+.modal {
+  display: none; /* se activa con JS */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal form {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.modal h2 {
+  margin-bottom: 15px;
+  color: #005f73;
+}
+
+/* Inputs y labels */
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input[type="text"], input[type="number"], input[type="date"] {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Botones del formulario */
+#aceptar, #cancelar {
+  padding: 10px 18px;
+  margin: 10px 5px 0 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#aceptar {
+  background: #0077b6;
+  color: white;
+}
+
+#aceptar:hover {
+  background: #023e8a;
+}
+
+#cancelar {
+  background: #adb5bd;
+  color: black;
+}
+
+#cancelar:hover {
+  background: #6c757d;
+}
+
+/* Footer */
+.footer {
+  margin-top: 30px;
+  background: #005f73;
+  height: 50px;
+}
+
+/* 📱 Responsividad */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+  }
+
+  .nav h1 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  #salir {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  th, td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  /* Las tablas en móviles se muestran en scroll horizontal */
+  .container {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav h1 {
+    font-size: 1rem;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block; /* convierte tabla en lista */
+  }
+
+  thead {
+    display: none; /* ocultamos cabecera */
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 0.85rem;
+  }
+
+  td:last-child {
+    border-bottom: none;
+  }
+
+  td::before {
+    content: attr(data-label); /* mostramos el nombre de la columna */
+    font-weight: bold;
+    color: #005f73;
+  }
+}
