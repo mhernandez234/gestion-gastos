@@ -2,38 +2,38 @@
     "articulos": [
         {
             "codigo": 10012,
-            "nombre": "Articulo1",
-            "categoria": "CAT01",
+            "nombre": "Alquiler",
+            "categoria": "Mensual",
             "moneda": "UYU",
-            "precio": 13500
+            "precio": 21000
         },
         {
             "codigo": 10013,
-            "nombre": "Articulo2",
-            "categoria": "CAT01",
-            "moneda": "USD",
-            "precio": 255
+            "nombre": "Gastos Comunes",
+            "categoria": "Mensual",
+            "moneda": "UYU",
+            "precio": 7000
         },
         {
             "codigo": 20110,
-            "nombre": "Articulo3",
-            "categoria": "CAT01",
+            "nombre": "Impuesto a la Puerta",
+            "categoria": "Bimestral",
             "moneda": "UYU",
-            "precio": 10450
+            "precio": 1450
         },
         {
             "codigo": 30011,
-            "nombre": "Articulo4",
-            "categoria": "CAT02",
-            "moneda": "USD",
-            "precio": 305
+            "nombre": "UTE",
+            "categoria": "Mensual",
+            "moneda": "UYU",
+            "precio": 2500
         },
         {
             "codigo": 30012,
-            "nombre": "Articulo5",
-            "categoria": "CAT02",
-            "moneda": "USD",
-            "precio": 305
+            "nombre": "Wifi Antel",
+            "categoria": "Mensual",
+            "moneda": "UYU",
+            "precio": 1540
         }
     ]
 }
