@@ -13,8 +13,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
             item.innerHTML = `
                 <td class="nro" data-label="Nro Transaccion:">${ocompra.oc}</td>
-                <td class="prov" data-label="Gasto:">${ocompra.prov}</td>
-                <td class="fec" data-label="Fecha:">${ocompra.fec}</td>
+                <td class="fec" data-label="Fecha:">${ocompra.prov}</td>
+                <td class="metodo" data-label="Metodo:">${ocompra.fec}</td>
+                <td class="gto" data-label="Gasto:">${ocompra.fec}</td>
+                <td class="monto" data-label="Monto:">${ocompra.fec}</td>
             `;
             ocompList.appendChild(item);
         });

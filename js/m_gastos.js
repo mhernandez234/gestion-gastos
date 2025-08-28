@@ -15,8 +15,11 @@ document.addEventListener("DOMContentLoaded", function(){
                 <td class="codigo" data-label="Codigo:">${articulo.codigo}</td>
                 <td class="codigo" data-label="Nombre:">${articulo.nombre}</td>
                 <td class="codigo" data-label="Categoria:">${articulo.categoria}</td>
+                <td class="codigo" data-label="Titular:">Marcos</td>
                 <td class="codigo" data-label="Moneda:">${articulo.moneda}</td>
                 <td class="codigo" data-label="Precio:">${articulo.precio}</td>
+                <td class="codigo" data-label="Vencimiento:">-- / -- / ----</td>
+                <td class="codigo" data-label="Cuota:">-- / --</td>
             `;
             artList.appendChild(item);
         });

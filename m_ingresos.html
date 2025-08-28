@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gastos</title>
+    <title>Ingresos</title>
     <link rel="stylesheet" href="estilo/articulos.css">
 </head>
 <body>
     <div class="nav">
-        <h1>Gastos</h1>
+        <h1>Ingresos</h1>
         <input type="button" value="Salir" id="salir">
     </div>
     <div class="container">
@@ -29,25 +29,19 @@
         </table>
         <div class="modal">
             <form action="" id="form">
-                <h2>Gasto</h2>
-                <label for="art">Código: </label>
-                <input type="text" id="art">
-                <label for="nom">Descripción: </label>
+                <h2>Ingreso</h2>
+                <label for="cod">Codigo:</label>
+                <input type="text" id="cod">
+                <label for="nom">Nombre:</label>
                 <input type="text" id="nom">
-                <label for="cat">Categoria: </label>
-                <input type="text" id="cat">
-                <label for="tit">Titular:</label>
-                <input type="text" id="tit">
-                <label for="moneda">Monto: </label>
-                <input type="text" id="moneda">
-                <input type="text" id="precio">
-                <label for="venc">Vencimiento:</label>
-                <input type="date" id="venc">
-                <label for="tiene-cuotas">Cuotas?</label>
-                <input type="checkbox" id="tiene-cuotas">
-                <input type="number" id="cuotas">
-                <label for="activo">Activo?</label>
-                <input type="checkbox" id="activo">
+                <label for="metodo">Metodo</label>
+                <input type="text" id="metodo">
+                <label for="fec">Fecha:</label>
+                <input type="date" id="fec">
+                <label for="monto">Monto:</label>
+                <input type="text" id="monto">
+                <label for="tipo">Tipo:</label>
+                <input type="text" id="tipo">
                 <input type="button" value="Aceptar" id="aceptar">
                 <input type="button" value="Cancelar" id="cancelar">
             </form>
