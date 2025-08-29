@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
     const artList = document.getElementById('lista-articulos');
-    const API = "datos/articulos.json";
+    const API = "../../datos/articulos.json";
 
     fetch(API)
     .then(response => response.json())
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function(){
         modal.style.display = "none";
     });
     document.getElementById("salir").addEventListener("click", function(){
-        window.location = "index.html"
+        window.location = "../../index.html"
     })
 
 })

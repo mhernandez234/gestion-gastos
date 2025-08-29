@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
     const ocompList = document.getElementById('lista-ocompras');
-    const API = "datos/ocompras.json";
+    const API = "../../datos/ocompras.json";
 
     fetch(API)
     .then(response => response.json())
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function(){
         modal.style.display = "none";
     });
     document.getElementById("salir").addEventListener("click", function(){
-        window.location = "index.html"
+        window.location = "../../index.html"
     })
 
 })
