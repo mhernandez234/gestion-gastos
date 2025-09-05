@@ -15,55 +15,60 @@
         <table>
             <thead>
                 <tr>
-                    <th>Nro Trasnsacción:</th>
+                    <th>ID:</th>
                     <th>Fecha:</th>
                     <th>Metodo:</th>
-                    <th>Gasto:</th>
-                    <th>Monto:</th>
+                    <th>Total:</th>
                 </tr>
             </thead>
-            <tbody id="lista-ocompras"></tbody>
+            <tbody id="lista-pagos"></tbody>
         </table>
         <div class="modal">
             <form action="" id="form">
                 <div class="cabezal">
                     <h2>Pago</h2>
                     <div class="input-corto">
-                        <label for="fecha">Fecha:</label>
-                        <input type="date" id="fecha" name="fecha">
+                        <label for="id">ID:</label>
+                        <input type="text" id="id" name="id">
                     </div>
                     <div class="input-medio">
-                        <label for="nro-oc">Nro Trasnsacción:</label>
-                        <input type="text" id="nro-oc" name="nro-oc">
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" id="fecha" name="fecha"> 
                     </div>
                     <div class="input-largo">
-                        <label for="proveedor">Proveedor</label>
-                        <input type="text" id="proveedor" name="proveedor">
+                        <label for="total">Total:</label>
+                        <input type="text" id="total" name="total">
                     </div>
                 </div>
                 <div class="grilla">
                     <table>
                         <thead>
                             <tr>
-                                <th>Articulo</th>
-                                <th>Descripcion</th>
+                                <th>Gasto</th>
                                 <th>Moneda</th>
-                                <th>precio</th>
+                                <th>Monto</th>
+                                <th>Comparte</th>
                             </tr>   
                         </thead>
                         <tbody class="tbody-grilla">
                             <tr>
-                                <td><input type="text" class="cod-art"></td>
-                                <td><input type="text" class="desc-art" disabled></td>
-                                <td><input type="text" class="moneda"></td>
-                                <td><input type="number" class="precio"></td>
+                                <td data-label="Gasto"><input type="text" class="gasto"></td>
+                                <td data-label="Moneda"><input type="text" class="moneda"></td>
+                                <td data-label="Monto"><input type="text" class="monto"></td>
+                                <td data-label="Comparte"><input type="checkbox" class="comparte"></td>
+                            </tr>
+                            <tr class="fila-agregar">
+                                <td colspan="4">
+                                    <button type="button" class="btn-agregar">+</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
-                    <input type="button" value="Agregar fila" id="agregar-fila">
                 </div>
-                <input type="button" value="Aceptar" id="aceptar">
-                <input type="button" value="Cancelar" id="cancelar">
+                <div class="fila">
+                    <input type="button" value="Cancelar" id="cancelar">
+                    <input type="button" value="Aceptar" id="aceptar">
+                </div>
             </form>
         </div>
     </div>

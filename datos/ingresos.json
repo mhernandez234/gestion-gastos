@@ -1,0 +1,53 @@
+{
+    "ingresos":[
+        {
+            "id": 1,
+            "desc": "Sueldo Marcos",
+            "cat": "Sueldo",
+            "metodo": "Efectivo",
+            "moneda": "$",
+            "monto": 30000,
+            "dia_ing": 31,
+            "repetir": "S",
+            "num_rep": 1,
+            "frec": "Mes"
+        },
+        {
+            "id": 1,
+            "desc": "Ticket Marcos",
+            "cat": "Otro",
+            "metodo": "Ticket",
+            "moneda": "$",
+            "monto": 8000,
+            "dia_ing": 31,
+            "repetir": "S",
+            "num_rep": 1,
+            "frec": "Mes"
+        },
+        {
+            "id": 1,
+            "desc": "Tarjeta Credito",
+            "cat": "Otro",
+            "metodo": "Credito",
+            "moneda": "$",
+            "monto": 4000,
+            "dia_ing": 10,
+            "repetir": "N",
+            "num_rep": 0,
+            "frec": "0"
+        }
+        ,
+        {
+            "id": 1,
+            "desc": "Adelanto Marcos",
+            "cat": "Otro",
+            "metodo": "Efectivo",
+            "moneda": "$",
+            "monto": 4000,
+            "dia_ing": 13,
+            "repetir": "N",
+            "num_rep": 0,
+            "frec": "0"
+        }
+    ]
+}

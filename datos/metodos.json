@@ -1,0 +1,12 @@
+{   
+    "metodos": [
+        {
+            "metodo": "Efectivo"
+        },
+        {
+            "metodo": "Credito"
+        },{
+            "metodo": "Ticket"
+        }
+    ]
+}

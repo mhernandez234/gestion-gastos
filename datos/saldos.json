@@ -1,0 +1,16 @@
+{
+    "saldos": [
+        {
+            "metodo": "Efectivo",
+            "saldo": 43533
+        },
+        {
+            "metodo": "Credito",
+            "saldo": 43533
+        },
+        {
+            "metodo": "Ticket",
+            "saldo": 43533
+        }
+    ] 
+        }

@@ -1,4 +1,4 @@
-/* Reset básico */
+/* ---------------- RESET BÁSICO ---------------- */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@ body {
   color: #333;
 }
 
-/* Barra superior */
+/* ---------------- NAVBAR ---------------- */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -19,7 +19,7 @@ body {
   background-color: #005f73;
   color: white;
   padding: 15px 20px;
-  flex-wrap: wrap; /* para que no se rompa en móviles */
+  flex-wrap: wrap;
 }
 
 .nav h1 {
@@ -40,42 +40,42 @@ body {
   transform: scale(1.05);
 }
 
-/* Contenedor principal */
+/* ---------------- CONTENEDOR PRINCIPAL ---------------- */
 .container {
   padding: 20px;
-  overflow-x: auto; /* evita que la tabla se rompa */
+  overflow-x: auto;
 }
 
-/* Tabla de órdenes */
-table {
+/* ---------------- TABLA PRINCIPAL ---------------- */
+.container > table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
   background: white;
   border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-th, td {
+.container > table th,
+.container > table td {
   padding: 10px;
   border-bottom: 1px solid #ddd;
   text-align: left;
 }
 
-th {
+.container > table th {
   background: #0a9396;
-  font-weight: bold;
   color: white;
+  font-weight: bold;
 }
 
-tr:hover {
+.container > table tr:hover {
   background-color: #e0f7fa;
 }
 
-/* Modal */
+/* ---------------- MODAL ---------------- */
 .modal {
-  display: none; /* se activa con JS */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -86,19 +86,33 @@ tr:hover {
   align-items: center;
   padding: 20px;
   z-index: 1000;
-  overflow-y: auto; /* scroll si el contenido es largo */
 }
 
 .modal form {
   background: white;
   padding: 20px;
   border-radius: 12px;
-  width: 90%;
-  max-width: 800px;
+  width: 95%;
+  max-width: 900px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* NO scroll aquí */
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* Encabezado formulario */
+.fila{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.fila input[type="button"]{
+  flex: 1;
+}
+
+/* ---------------- FORMULARIO ---------------- */
 .cabezal {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -107,7 +121,7 @@ tr:hover {
 }
 
 .cabezal h2 {
-  grid-column: 1 / -1; /* título ocupa toda la fila */
+  grid-column: 1 / -1;
   margin-bottom: 10px;
   color: #005f73;
 }
@@ -118,74 +132,102 @@ label {
   display: block;
 }
 
-/* Tamaños personalizados */
-.input-corto {
-  grid-column: span 1;
-}
+.input-corto { grid-column: span 1; }
+.input-medio { grid-column: span 2; }
+.input-largo { grid-column: span 3; }
 
-.input-medio {
-  grid-column: span 2;
-}
-
-.input-largo {
-  grid-column: span 3;
-}
-
-input[type="text"], input[type="date"], input[type="number"] {
+input[type="text"],
+input[type="date"],
+input[type="number"] {
   width: 100%;
   min-width: 0;
   padding: 10px;
-  font-size: 1rem; /* 🔑 que no se vea chico */
+  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-/* Grilla detalle */
-.grilla table {
-  margin-bottom: 10px;
+/* ---------------- GRILLA MODAL ---------------- */
+.grilla {
+  flex: 1;
+  overflow-x: auto; /* scroll horizontal si tabla es ancha */
+  overflow-y: auto; /* scroll vertical si muchas filas */
+  max-height: 300px; /* altura máxima */
+  margin-top: 10px;
+  border-radius: 4px;
 }
 
-#agregar-fila {
-  padding: 8px 15px;
-  border: none;
+.grilla table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+}
+
+/* THEAD FIJO EN DESKTOP */
+.grilla thead th {
+  position: sticky;
+  top: 0;
   background: #0a9396;
   color: white;
+  z-index: 2;
+}
+
+.grilla tbody tr {
+  background: white;
+}
+
+.grilla tbody tr:hover {
+  background-color: #e0f7fa;
+}
+
+.grilla td, .grilla th {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ---------------- BOTONES ---------------- */
+/* Botón + en la grilla */
+.btn-agregar {
+  width: 100%;           /* ocupa todo el ancho del td */
+  max-width: 100px;      /* opcional, si querés limitarlo */
+  height: 40px;          /* altura del botón */
+  font-size: 1.5rem;     /* tamaño del + */
+  font-weight: bold;
+  background-color: #0a9396;
+  color: white;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-#agregar-fila:hover {
-  background: #005f73;
+.btn-agregar:hover {
+  background-color: #005f73;
 }
 
-/* Botones finales */
+/* Ajuste para que se vea solo en el primer campo si quieres */
+.fila-agregar td {
+  padding: 0;           /* eliminamos padding para alinear con input */
+}
+
+.fila-agregar td .btn-agregar {
+  display: block;
+}
+
+
 #aceptar, #cancelar {
-  padding: 10px 18px;
+  padding: 10px 18px; 
   margin: 10px 5px 0 0;
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 
-#aceptar {
-  background: #0077b6;
-  color: white;
-}
+#aceptar { background: #0077b6; color: white; }
+#aceptar:hover { background: #023e8a; }
+#cancelar { background: #adb5bd; color: black; }
+#cancelar:hover { background: #6c757d; }
 
-#aceptar:hover {
-  background: #023e8a;
-}
-
-#cancelar {
-  background: #adb5bd;
-  color: black;
-}
-
-#cancelar:hover {
-  background: #6c757d;
-}
-
-/* Footer */
+/* ---------------- FOOTER ---------------- */
 .footer {
   margin-top: 30px;
   background: #005f73;
@@ -193,79 +235,65 @@ input[type="text"], input[type="date"], input[type="number"] {
 }
 
 /* ---------------- RESPONSIVIDAD ---------------- */
-
-/* Tablets */
 @media (max-width: 992px) {
-  .cabezal {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-  }
-
-  .nav h1 {
-    font-size: 1.2rem;
-  }
-
-  th, td {
-    font-size: 0.9rem;
-  }
+  .cabezal { grid-template-columns: repeat(2, 1fr); }
+  .nav h1 { font-size: 1.2rem; }
+  th, td { font-size: 0.9rem; }
 }
 
-/* Celulares */
 @media (max-width: 600px) {
+
   .nav {
     flex-direction: column;
     align-items: flex-start;
     text-align: center;
   }
 
-  .nav h1 {
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
+  .nav h1 { font-size: 1rem; margin-bottom: 10px; }
+  #salir { width: 100%; text-align: center; margin-top: 10px; }
 
-  #salir {
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-  }
+  .cabezal { grid-template-columns: 1fr; }
 
-  .cabezal {
-    grid-template-columns: 1fr; /* cada campo en una fila */
-  }
-
-  /* Tablas en lista vertical */
-  table, thead, tbody, th, td, tr {
+  /* GRILLA COMO TARJETAS */
+  .grilla table, .grilla thead, .grilla tbody, .grilla th, .grilla td, .grilla tr {
     display: block;
+    width: 100%;
   }
 
-  thead {
-    display: none;
-  }
+  .grilla thead { display: none !important; }
 
-  tr {
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
+  .grilla tr {
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 10px;
     background: white;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
   }
 
-  td {
+  .grilla td {
     display: flex;
-    justify-content: space-between;
-    padding: 8px;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 8px 0;
     border: none;
     border-bottom: 1px solid #eee;
     font-size: 0.85rem;
+    word-wrap: break-word;
   }
 
-  td:last-child {
-    border-bottom: none;
-  }
+  .grilla td:last-child { border-bottom: none; }
 
-  td::before {
+  .grilla td::before {
     content: attr(data-label);
     font-weight: bold;
     color: #005f73;
+    margin-bottom: 4px;
   }
+
+  .grilla {
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+
+  .grilla table { min-width: 100%; }
 }

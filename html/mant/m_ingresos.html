@@ -15,39 +15,79 @@
         <table>
             <thead>
                 <tr>
-                    <th>Código</th>
+                    <th>ID</th>
                     <th>Descripción</th>
                     <th>Categoría</th>
-                    <th>Titular</th>
+                    <th>Metodo</th>
                     <th>Moneda</th>
                     <th>Monto</th>
-                    <th>Vencimiento</th>
-                    <th>Cuota</th>
+                    <th>Día Ingreso</th>
                 </tr>
             </thead>
-            <tbody id="lista-articulos"></tbody>
+            <tbody id="lista-ingresos"></tbody>
         </table>
         <div class="modal">
             <form action="" id="form">
                 <h2>Ingreso</h2>
-                <label for="cod">Codigo:</label>
-                <input type="text" id="cod">
-                <label for="nom">Nombre:</label>
-                <input type="text" id="nom">
-                <label for="metodo">Metodo</label>
-                <input type="text" id="metodo">
-                <label for="fec">Fecha:</label>
-                <input type="date" id="fec">
-                <label for="monto">Monto:</label>
-                <input type="text" id="monto">
-                <label for="tipo">Tipo:</label>
-                <input type="text" id="tipo">
-                <input type="button" value="Aceptar" id="aceptar">
-                <input type="button" value="Cancelar" id="cancelar">
+
+                <label for="id">ID:</label>
+                <input type="text" id="id" disabled>
+
+                <label for="desc">Descripcion:</label>
+                <input type="text" id="desc">
+
+                <label for="cat">Categoría:</label>
+                <select name="categoria" id="cat">
+                    <option value="0" disabled selected>Seleccione Categoria</option>
+                    <option value="sueldo">Sueldo</option>
+                    <option value="adelanto">Adelanto</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="metodo">Metodo:</label>
+                <select name="metodo" id="metodo">
+                    <option value="0" disabled selected>Seleccione Metodo</option>
+                    <option value="efectivo">Efectivo</option>
+                    <option value="credito">Credito</option>
+                    <option value="ticket">Ticket</option>
+                </select>
+
+                <label>Monto:</label>
+                <div class="fila">
+                    <select name="moneda" id="moneda">
+                        <option value="pesos" selected>$</option>
+                        <option value="dolares">U$D</option>
+                    </select>
+                    <input type="text" id="monto">
+                </div>
+
+                <label for="dia-ing">Día Ingreso:</label>
+                <input type="number" id="dia-ing" min="1" max="31">
+
+                <div class="checkbox-group">
+                    <label for="repetir">Repetir Cada:</label>
+                    <input type="checkbox" id="repetir">
+                </div>
+
+                <div class="fila" id="linea-frecuencia">
+                    <input type="number" id="num" min="1">
+                    <select name="frecuencia" id="frec">
+                        <option value="0" disabled selected>Ingrese Frecuencia</option>
+                        <option value="dia">Día</option>
+                        <option value="semana">Semana</option>
+                        <option value="mes">Mes</option>
+                        <option value="anio">Año</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <input type="button" value="Cancelar" id="cancelar">
+                    <input type="button" value="Aceptar" id="aceptar">
+                </div>
             </form>
         </div>
     </div>
     <div class="footer"></div>
 </body>
-<script src="../../js/mant/m_gastos.js"></script>
+<script src="../../js/mant/m_ingresos.js"></script>
 </html>

@@ -1,36 +1,38 @@
 document.addEventListener("DOMContentLoaded", function(){
-    const artList = document.getElementById('lista-gastos');
-    const API = "../../datos/gastos.json";
+    const ingList = document.getElementById('lista-ingresos');
+    const API = "../../datos/ingresos.json";
 
     fetch(API)
     .then(response => response.json())
     .then(data => {
-        const arts = data.gastos;
+        const ing = data.ingresos;
 
-        arts.forEach(gasto => {
+        ing.forEach(ingreso => {
             const item = document.createElement('tr');
             item.className = 'registro';
 
             item.innerHTML = `
-                <td class="codigo" data-label="ID:">${gasto.id}</td>
-                <td class="codigo" data-label="Descripcion:">${gasto.desc}</td>
-                <td class="codigo" data-label="Vencimiento:">${gasto.dia_venc}</td>
-                <td class="codigo" data-label="Moneda:">${gasto.moneda}</td>
-                <td class="codigo" data-label="Monto:">${gasto.monto}</td>
+                <td class="codigo" data-label="ID:">${ingreso.id}</td>
+                <td class="codigo" data-label="Descripcion:">${ingreso.desc}</td>
+                <td class="codigo" data-label="Categoria:">${ingreso.cat}</td>
+                <td class="codigo" data-label="Metodo:">${ingreso.metodo}</td>
+                <td class="codigo" data-label="Moneda:">${ingreso.moneda}</td>
+                <td class="codigo" data-label="Monto:">${ingreso.monto}</td>
+                <td class="codigo" data-label="Dia Ingreso:">${ingreso.dia_ing}</td>
             `;
-            artList.appendChild(item);
+            ingList.appendChild(item);
         });
     })
-    .catch(error => console.error('Error al cargar productos:', error));
+    .catch(error => console.error('Error al cargar ingresos:', error));
     //Modal
     const modal = document.querySelector(".modal");
-    const filas = document.querySelectorAll("#lista-gastos");
+    const filas = document.querySelectorAll("#lista-ingresos");
     filas.forEach(fila => {
         fila.addEventListener("click", function() {
             modal.style.display = "flex";
         });
     });
-    
+
     const checkRepetir = document.getElementById("repetir");
     const lineaFrecuencia = document.getElementById("linea-frecuencia");
 

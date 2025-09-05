@@ -15,7 +15,6 @@
                     <a href="#">Mantenimientos ▾</a>
                     <ul class="submenu">
                         <li><a href="html/mant/m_gastos.html">Gastos</a></li>
-                        <li><a href="html/mant/m_categorias.html">Categorías</a></li>
                         <li><a href="html/mant/m_ingresos.html">Ingresos</a></li>
                     </ul>
                 </li>
@@ -23,8 +22,7 @@
                     <a href="#">Transacciones ▾</a>
                     <ul class="submenu">
                         <li><a href="html/trans/t_pagos.html">Pagos</a></li>
-                        <li><a href="html/trans/t_pagos_masivos.html">Pagos Masivos</a></li>
-                        <li><a href="html/trans/t_ingresos_ext.html">Ingresos Extras</a></li>
+                        <li><a href="html/trans/t_simulacion.html">Simulación Pagos</a></li>
                     </ul>
                 </li>
                 <li><a href="html/rep/r_reportes.html">Reportes</a></li>
@@ -44,13 +42,40 @@
         </div>
     </nav>
 
-    <main class="container">
-        
+    <main class="carrusel-container">
+        <!-- Slide 1: Saldos Disponibles -->
+        <div class="carrusel" id="saldos-disponibles">
+            <h2>Saldos Disponibles</h2>
+            <!-- acá se cargan dinámicamente los saldos -->
+        </div>
+
+        <!-- Slide 2: Vencimientos de Gastos -->
+        <div class="carrusel" id="vencimientos-gastos">
+            <h2>Vencimientos de Gastos Activos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Titular</th>
+                        <th>Moneda</th>
+                        <th>Monto</th>
+                        <th>Día Vencimiento</th>
+                    </tr>
+                </thead>
+                <tbody id="venc-gastos">
+                    <!-- Filas generadas con JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Botón para avanzar carrusel -->
+        <input type="button" value="Siguiente" id="siguiente" class="btn-carrusel">
     </main>
 
     <footer class="footer">
         &copy; 2025 Proyecto. Todos los derechos reservados.
     </footer>
+
+    <script src="js/index.js"></script>
 </body>
-<script src="js/index.js"></script>
 </html>

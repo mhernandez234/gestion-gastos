@@ -1,0 +1,40 @@
+{
+    "pagos_detalle":[
+        {
+            "gasto": "Alquiler",
+            "moneda": "$",
+            "monto": 20000,
+            "comparte": "N"
+        },
+        {
+            "gasto": "Alquiler",
+            "moneda": "$",
+            "monto": 20000,
+            "comparte": "N"
+        },
+        {
+            "gasto": "Alquiler",
+            "moneda": "$",
+            "monto": 20000,
+            "comparte": "N"
+        },
+        {
+            "gasto": "Alquiler",
+            "moneda": "$",
+            "monto": 20000,
+            "comparte": "N"
+        },
+        {
+            "gasto": "Alquiler",
+            "moneda": "$",
+            "monto": 20000,
+            "comparte": "N"
+        },
+        {
+            "gasto": "Alquiler",
+            "moneda": "$",
+            "monto": 20000,
+            "comparte": "N"
+        }
+    ]
+}

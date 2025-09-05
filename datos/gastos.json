@@ -1,0 +1,64 @@
+{
+    "gastos":[
+        {
+            "id": 1,
+            "desc": "Alquiler",
+            "dia_venc": 10,
+            "moneda": "$",
+            "monto": 20000,
+            "repite": "S",
+            "num": 1,
+            "frec": "Mes"
+        },
+        {
+            "id": 1,
+            "desc": "Gastos Comunes",
+            "dia_venc": 20,
+            "moneda": "$",
+            "monto": 3000,
+            "repite": "S",
+            "num": 1,
+            "frec": "Mes"
+        },
+        {
+            "id": 1,
+            "desc": "Ute",
+            "dia_venc": 10,
+            "moneda": "$",
+            "monto": 2000,
+            "repite": "S",
+            "num": 1,
+            "frec": "Mes"
+        },
+        {
+            "id": 1,
+            "desc": "Antel",
+            "dia_venc": 10,
+            "moneda": "$",
+            "monto": 1400,
+            "repite": "S",
+            "num": 1,
+            "frec": "Mes"
+        },
+        {
+            "id": 1,
+            "desc": "Comida Shani",
+            "dia_venc": 0,
+            "moneda": "$",
+            "monto": 20000,
+            "repite": "S",
+            "num": 1,
+            "frec": "Mes"
+        },
+        {
+            "id": 1,
+            "desc": "Alquiler",
+            "dia_venc": 10,
+            "moneda": "$",
+            "monto": 20000,
+            "repite": "S",
+            "num": 1,
+            "frec": "Mes"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "pagos":[
+        {
+            "id": 1,
+            "fecha": "03/09/2025",
+            "metodo": "Efectivo",
+            "total": 20000
+        },
+        {
+            "id": 1,
+            "fecha": "03/09/2025",
+            "metodo": "Efectivo",
+            "total": 20000
+        },
+        {
+            "id": 1,
+            "fecha": "03/09/2025",
+            "metodo": "Efectivo",
+            "total": 20000
+        },
+        {
+            "id": 1,
+            "fecha": "03/09/2025",
+            "metodo": "Efectivo",
+            "total": 20000
+        },
+        {
+            "id": 1,
+            "fecha": "03/09/2025",
+            "metodo": "Efectivo",
+            "total": 20000
+        }
+    ]
+}
