@@ -131,7 +131,8 @@ main.container {
     right: 10px;  /* espacio desde el borde derecho */
     width: 160px; /* ajustar tamaño si es necesario */
     height: 30px;
-    font-size: 20px;
+    font-size: 25px;
+    color: #333;
     text-align: right;
     border: none;
 }   
