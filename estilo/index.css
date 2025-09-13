@@ -115,14 +115,26 @@ main.container {
 }
 
 .saldos {
+    position: relative;
     width: 300px;
     max-width: 100%;
     height: 100px;
     padding: 10px;
     font-size: 15px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px 0;
 }
+
+.saldos input {
+    position: absolute;
+    bottom: 10px; /* espacio desde el borde inferior */
+    right: 10px;  /* espacio desde el borde derecho */
+    width: 160px; /* ajustar tamaño si es necesario */
+    height: 30px;
+    font-size: 20px;
+    text-align: right;
+    border: none;
+}   
 
 /* Botoneras */
 .botonera {
@@ -132,7 +144,7 @@ main.container {
     margin: 20px auto;
     padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px 0;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -142,7 +154,17 @@ main.container {
 .botonera button {
     flex: 1 1 45%;
     padding: 10px;
-    font-size: 16px;
+    font-size: 16px;    
+}
+
+.btn-enlace{
+    background-color: #005f73;
+    border-radius: 8px;
+    color: white;
+}
+
+.btn-enlace:hover{
+    background-color: #003d49;
 }
 
 /* ---------------- FOOTER ---------------- */
@@ -267,7 +289,7 @@ footer.footer {
     }
 
     .botonera button {
-        flex: 1 1 48%;
+        flex: 1 1 48%;  
     }
 
     /* Footer más compacto */
