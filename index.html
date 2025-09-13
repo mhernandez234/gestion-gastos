@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Principal</title>
+    <title>Página Principal</title>
     <link rel="stylesheet" href="estilo/index.css">
 </head>
 <body>
     <nav class="nav">
-        <h1>Gestion de Gastos</h1>
-        <div class="menu-left">
+        <!-- Fila superior: título + botón de menú -->
+        <div class="nav-top">
+            <h1>Gestión de Gastos</h1>
+            <input type="button" value="≡" id="menu">
+        </div>
+
+        <!-- Menú izquierdo -->
+        <div class="menu-left" id="menu-l">
             <ul>
                 <li class="has-submenu">
                     <a href="#">Mantenimientos ▾</a>
@@ -34,7 +40,9 @@
                 </li>
             </ul>
         </div>
-        <div class="menu-right">
+
+        <!-- Menú derecho -->
+        <div class="menu-right" id="menu-r">
             <ul>
                 <li><a href="perfil.html">Perfil</a></li>
                 <li><button id="salir">Cerrar Sesión</button></li>
@@ -42,34 +50,33 @@
         </div>
     </nav>
 
-    <main class="carrusel-container">
-        <!-- Slide 1: Saldos Disponibles -->
-        <div class="carrusel" id="saldos-disponibles">
-            <h2>Saldos Disponibles</h2>
-            <!-- acá se cargan dinámicamente los saldos -->
+    <main class="container">
+        <div class="saldos-disp">
+            <div class="saldos" id="efectivo">
+                <h2>Efectivo:</h2>
+                <input type="text" disabled>
+            </div>
+            <div class="saldos" id="credito">
+                <h2>Credito:</h2>
+                <input type="text" disabled>
+            </div>
+            <div class="saldos" id="ticket">
+                <h2>Ticket:</h2>
+                <input type="text" disabled>
+            </div>
         </div>
-
-        <!-- Slide 2: Vencimientos de Gastos -->
-        <div class="carrusel" id="vencimientos-gastos">
-            <h2>Vencimientos de Gastos Activos</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Descripción</th>
-                        <th>Titular</th>
-                        <th>Moneda</th>
-                        <th>Monto</th>
-                        <th>Día Vencimiento</th>
-                    </tr>
-                </thead>
-                <tbody id="venc-gastos">
-                    <!-- Filas generadas con JS -->
-                </tbody>
-            </table>
+        <div class="botonera">
+            <button data-url="html/mant/m_gastos.html" class="btn-enlace">Gastos</button>
+            <button data-url="html/mant/m_ingresos.html" class="btn-enlace">Ingresos</button>
+            <button data-url="html/trans/t_pagos.html" class="btn-enlace">Pagos</button>
+            <button data-url="html/trans/t_pagos.html" class="btn-enlace">Posponer Pago</button>
         </div>
-
-        <!-- Botón para avanzar carrusel -->
-        <input type="button" value="Siguiente" id="siguiente" class="btn-carrusel">
+        <div class="botonera">
+            <button data-url="html/mant/m_gastos.html" class="btn-enlace">Gastos a Vencer</button>
+            <button data-url="html/mant/m_gastos.html" class="btn-enlace">Simular</button>
+            <button data-url="html/mant/m_gastos.html" class="btn-enlace">Plan de Ahorro</button>
+            <button data-url="html/mant/m_gastos.html" class="btn-enlace">Reportes</button>
+        </div>
     </main>
 
     <footer class="footer">

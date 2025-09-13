@@ -90,7 +90,7 @@ body {
 
 .modal form {
   background: white;
-  padding: 20px;
+  padding: 0 20px 20px  20px;
   border-radius: 12px;
   width: 95%;
   max-width: 900px;
@@ -99,6 +99,36 @@ body {
   flex-direction: column;
   overflow: hidden; /* NO scroll aquí */
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.form-nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0a9396;
+  color: white; 
+  padding: 10px 20px 10px 20px;     
+  margin: 0 -30px 20px -30px;
+}
+
+.form-nav > .pestana {
+  flex-grow: 3;
+  text-align: center;
+  padding: 5px 0 5px 0;
+}
+
+.form-nav > .pestana:hover  {
+  background-color: #74c2c3;  
+}
+
+.form-nav > .btn-nav{
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+}
+
+.form-nav > .btn-nav:hover{
+  width: 40px;
+  height: 40px;
 }
 
 .fila{
@@ -185,6 +215,10 @@ input[type="number"] {
   border-bottom: 1px solid #ddd;
 }
 
+#form-comp{
+  display: none;
+}
+
 /* ---------------- BOTONES ---------------- */
 /* Botón + en la grilla */
 .btn-agregar {
@@ -251,6 +285,10 @@ input[type="number"] {
 
   .nav h1 { font-size: 1rem; margin-bottom: 10px; }
   #salir { width: 100%; text-align: center; margin-top: 10px; }
+
+  .form-nav > .pestana{
+    font-size: 20px;
+  }
 
   .cabezal { grid-template-columns: 1fr; }
 

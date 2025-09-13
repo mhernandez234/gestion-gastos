@@ -25,45 +25,92 @@
         </table>
         <div class="modal">
             <form action="" id="form">
-                <div class="cabezal">
-                    <h2>Pago</h2>
-                    <div class="input-corto">
-                        <label for="id">ID:</label>
-                        <input type="text" id="id" name="id">
+                <div class="fila form-nav">
+                    <h2 class="pestana" id="pest-pagos">Pago</h2>
+                    <h2 class="pestana" id="pest-comp">Compartir</h2>
+                    <img src="../../recursos/imagenes/op-nuevo.jpg" alt="Nuevo" class="btn-nav">
+                    <img src="../../recursos/imagenes/op-editar.jpg" alt="Editar" class="btn-nav">
+                    <img src="../../recursos/imagenes/op-borrar.jpg" alt="Borrar" class="btn-nav">
+                </div>
+                <div class="pagos" id="form-pagos">
+                    <div class="cabezal">
+                        <div class="input-corto">
+                            <label for="id">ID:</label>
+                            <input type="text" id="id" name="id">
+                        </div>
+                        <div class="input-medio">
+                            <label for="fecha">Fecha:</label>
+                            <input type="date" id="fecha" name="fecha"> 
+                        </div>
+                        <div class="input-largo">
+                            <label for="total">Total:</label>
+                            <input type="text" id="total" name="total">
+                        </div>
                     </div>
-                    <div class="input-medio">
-                        <label for="fecha">Fecha:</label>
-                        <input type="date" id="fecha" name="fecha"> 
-                    </div>
-                    <div class="input-largo">
-                        <label for="total">Total:</label>
-                        <input type="text" id="total" name="total">
+                    <div class="grilla">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Gasto</th>
+                                    <th>Moneda</th>
+                                    <th>Monto</th>
+                                    <th>Comparte</th>
+                                </tr>   
+                            </thead>
+                            <tbody class="tbody-grilla">
+                                <tr>
+                                    <td data-label="Gasto"><input type="text" class="gasto"></td>
+                                    <td data-label="Moneda"><input type="text" class="moneda"></td>
+                                    <td data-label="Monto"><input type="text" class="monto"></td>
+                                    <td data-label="Comparte"><input type="checkbox" class="comparte"></td>
+                                </tr>
+                                <tr class="fila-agregar">
+                                    <td colspan="4">
+                                        <button type="button" class="btn-agregar">+</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="grilla">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Gasto</th>
-                                <th>Moneda</th>
-                                <th>Monto</th>
-                                <th>Comparte</th>
-                            </tr>   
-                        </thead>
-                        <tbody class="tbody-grilla">
-                            <tr>
-                                <td data-label="Gasto"><input type="text" class="gasto"></td>
-                                <td data-label="Moneda"><input type="text" class="moneda"></td>
-                                <td data-label="Monto"><input type="text" class="monto"></td>
-                                <td data-label="Comparte"><input type="checkbox" class="comparte"></td>
-                            </tr>
-                            <tr class="fila-agregar">
-                                <td colspan="4">
-                                    <button type="button" class="btn-agregar">+</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="compartir" id="form-comp">
+                    <div class="cabezal">
+                        <div class="fila">
+                            <label for="operacion">Opereacion:</label>
+                            <select name="operacion" id="operacion">                                
+                                <option value="0" disabled selected>Seleccionar Operacion</option>
+                                <option value="aut">Automatico</option>
+                                <option value="man">Manual</option>
+                            </select>
+                        </div>
+                        <div class="fila">
+                            <label for="tot">Total:</label>
+                            <input type="text" id="tot" disabled>
+                        </div>
+                    </div>
+                    <div class="grilla">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Usuario</th>
+                                    <th>Moneda</th>
+                                    <th>Monto</th>
+                                </tr>   
+                            </thead>
+                            <tbody class="tbody-grilla">
+                                <tr>
+                                    <td data-label="Usuario"><input type="text" class="usuario"></td>
+                                    <td data-label="Moneda"><input type="text" class="moneda"></td>
+                                    <td data-label="Monto"><input type="text" class="monto"></td>
+                                </tr>
+                                <tr class="fila-agregar">
+                                    <td colspan="3">
+                                        <button type="button" class="btn-agregar">+</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="fila">
                     <input type="button" value="Cancelar" id="cancelar">

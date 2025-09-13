@@ -5,13 +5,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const modal = document.querySelector(".modal");
     const inputFecha = document.getElementById("fecha");
     const display = document.getElementById("display"); // para mostrar DD/MM/YYYY
+    const form = document.getElementById("form");
 
     const btnAgregarFila = document.getElementById("agregar-fila");
     const btnAceptar = document.getElementById("aceptar");
     const btnCancelar = document.getElementById("cancelar");
-    const btnSalir = document.getElementById("salir");
+    const btnSalir = document.getElementById("salir");  
+    const formPagos = document.getElementById("form-pagos");  
+    const formComp = document.getElementById("form-comp");
 
     const tbodyGrilla = document.querySelector(".tbody-grilla");
+
 
     // --- Cargar ordenes de compra ---
     fetch(API)
@@ -38,6 +42,16 @@ document.addEventListener("DOMContentLoaded", function() {
         if (fila) {
             modal.style.display = "flex";
         }
+    });
+
+    // cambio entre pestañas
+    document.getElementById("pest-comp").addEventListener("click", function(){
+        formComp.style.display = "block";
+        formPagos.style.display = "none";
+    });
+    document.getElementById("pest-pagos").addEventListener("click", function(){
+        formPagos.style.display = "block";
+        formComp.style.display = "none";
     });
 
     // --- Inicializar fecha del día ---
@@ -71,7 +85,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // --- Botón aceptar: resetear form ---
     btnAceptar.addEventListener("click", function() {
-        const form = document.getElementById("form");
         form.reset();
 
         // Reiniciar fecha al día de hoy
@@ -79,10 +92,31 @@ document.addEventListener("DOMContentLoaded", function() {
         if (display) {
             display.textContent = `${dd}/${mm}/${yyyy}`;
         }
+        // --- Eliminar filas agregadas dinámicamente ---
+        const tbody = document.querySelector(".tbody-grilla");
+        const filas = tbody.querySelectorAll("tr:not(.fila-agregar)"); // todas excepto la de agregar
+        filas.forEach(fila => fila.remove());
+
+        // --- Agregar una fila vacía inicial ---
+        const nuevaFila = document.createElement("tr");
+        nuevaFila.innerHTML = `
+            <td data-label="Gasto"><input type="text" class="gasto"></td>
+            <td data-label="Moneda"><input type="text" class="moneda"></td>
+            <td data-label="Monto"><input type="text" class="monto"></td>
+            <td data-label="Comparte"><input type="checkbox" class="comparte"></td>
+        `;
+        tbody.insertBefore(nuevaFila, tbody.querySelector(".fila-agregar")); // justo antes de la fila de agregar
     });
 
-    // --- Botón cancelar: cerrar modal ---
+    // --- Botón cancelar: cerrar modal y resetear form---
     btnCancelar.addEventListener("click", function() {
+        form.reset();
+
+        // Reiniciar fecha al día de hoy
+        inputFecha.value = `${yyyy}-${mm}-${dd}`;
+        if (display) {
+            display.textContent = `${dd}/${mm}/${yyyy}`;
+        }
         modal.style.display = "none";
     });
 

@@ -1,4 +1,4 @@
-/* Reset básico */
+/* ---------------- RESET BÁSICO ---------------- */
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +6,13 @@
     font-family: Arial, sans-serif;
 }
 
-/* Body y contenedor principal */
 body {
     background-color: #f4f6f9;
     color: #333;
+    overflow-x: hidden; /* evita scroll horizontal */
 }
 
-/* Navbar */
+/* ---------------- NAVBAR ---------------- */
 nav.nav {
     background-color: #005f73;
     color: white;
@@ -20,34 +20,29 @@ nav.nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; /* permite que los items bajen en pantallas pequeñas */
+    flex-wrap: wrap;
 }
 
-/* Título */
 nav.nav h1 {
     font-size: 24px;
 }
 
-/* Menú izquierdo */
-nav.nav .menu-left ul {
+nav.nav #menu {
+    display: none;
+}
+
+/* Menús */
+nav.nav .menu-left ul,
+nav.nav .menu-right ul {
     display: flex;
     gap: 20px;
     list-style: none;
 }
 
-/* Menú derecho */
-nav.nav .menu-right ul {
-    display: flex;
-    gap: 15px;
-    list-style: none;
-}
-
-/* Items del menú */
 nav.nav ul li {
     position: relative;
 }
 
-/* Enlaces y botones */
 nav.nav ul li a,
 nav.nav ul li button {
     color: white;
@@ -67,7 +62,7 @@ nav.nav ul li button:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Botón Cerrar Sesión */
+/* Botón Cerrar sesión */
 nav.nav ul li button#salir {
     background-color: #005060;
     color: white;
@@ -81,7 +76,7 @@ nav.nav ul li button#salir:hover {
     transform: scale(1.05);
 }
 
-/* Submenú */
+/* Submenús */
 nav.nav ul li .submenu {
     display: none;
     position: absolute;
@@ -102,17 +97,55 @@ nav.nav ul li .submenu li a {
     padding: 10px 15px;
 }
 
-/* Mostrar submenú al hacer clic */
 nav.nav ul li.open .submenu {
     display: block;
 }
 
-/* Main */
+/* ---------------- MAIN ---------------- */
 main.container {
     padding: 20px;
 }
 
-/* Footer */
+/* Saldo disponible */
+.saldos-disp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.saldos {
+    width: 300px;
+    max-width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Botoneras */
+.botonera {
+    width: 300px;
+    max-width: 100%;
+    height: 150px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.botonera button {
+    flex: 1 1 45%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* ---------------- FOOTER ---------------- */
 footer.footer {
     background-color: #005f73;
     color: white;
@@ -122,25 +155,6 @@ footer.footer {
     bottom: 0;
     width: 100%;
 }
-
-/*  estilo de formularios del inicio */
-
-.carrusel{
-    border-radius: 8px;
-    box-shadow: 0 0 4px 0 ;
-    margin: 10px 40px;
-    padding: 20px;
-}
-
-table{
-    border-radius: 4px;
-    border: 1px solid #333;
-}
-
-thead{
-    background-color: #005f73;
-}
-
 
 /* ---------------- RESPONSIVIDAD ---------------- */
 
@@ -167,24 +181,47 @@ thead{
     nav.nav {
         flex-direction: column;
         align-items: flex-start;
-        padding: 15px;
+        padding: 10px;
     }
 
-    nav.nav h1 {
-        font-size: 18px;
+    /* Fila superior con título y botón */
+    nav.nav .nav-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
         margin-bottom: 10px;
     }
 
-    /* Menús apilados */
+    nav.nav .nav-top h1 {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    nav.nav #menu {
+        display: block;
+        width: 30px;
+        height: 30px;
+        font-size: 24px;
+        color: #003d49;
+        background-color: #005f73;
+        border-radius: 4px;
+        border: 2px solid #003d49;
+        cursor: pointer;
+    }
+
+    /* Menús apilados debajo del título */
+    nav.nav .menu-left,
+    nav.nav .menu-right {
+        display: none; /* se muestran con JS al presionar botón */
+        width: 100%;
+    }
+
     nav.nav .menu-left ul,
     nav.nav .menu-right ul {
         flex-direction: column;
         width: 100%;
         gap: 5px;
-    }
-
-    nav.nav ul li {
-        width: 100%;
     }
 
     nav.nav ul li a,
@@ -194,13 +231,10 @@ thead{
         padding: 10px;
     }
 
-    /* Botón salir ocupa todo el ancho */
     nav.nav ul li button#salir {
-        width: 100%;
         text-align: center;
     }
 
-    /* Submenú en móviles ocupa ancho completo */
     nav.nav ul li .submenu {
         position: static;
         width: 100%;
@@ -209,6 +243,31 @@ thead{
 
     nav.nav ul li .submenu li a {
         padding: 10px;
+    }
+
+    /* Ajuste de contenedor principal */
+    main.container {
+        padding: 10px;
+    }
+
+    /* Saldo y botoneras ocupan todo el ancho */
+    .saldos,
+    .botonera {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .saldos{
+        display: none;
+    }
+
+    #efectivo{
+        display: block;
+    }
+
+    .botonera button {
+        flex: 1 1 48%;
     }
 
     /* Footer más compacto */
