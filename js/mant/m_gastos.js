@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
     const artList = document.getElementById('lista-gastos');
     const API = "../../datos/gastos.json";
+    const form = document.getElementById("form");
 
     fetch(API)
     .then(response => response.json())
@@ -49,10 +50,10 @@ document.addEventListener("DOMContentLoaded", function(){
     checkRepetir.addEventListener("change", mostrarFrecuencia);
 
     document.getElementById("aceptar").addEventListener("click", function(){
-        const form = document.getElementById("form");
         form.reset();
     });
     document.getElementById("cancelar").addEventListener("click", function() {
+        form.reset();
         modal.style.display = "none";
     });
     document.getElementById("salir").addEventListener("click", function(){

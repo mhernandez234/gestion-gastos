@@ -118,6 +118,21 @@ document.addEventListener("DOMContentLoaded", function() {
             display.textContent = `${dd}/${mm}/${yyyy}`;
         }
         modal.style.display = "none";
+
+        // --- Eliminar filas agregadas dinámicamente ---
+        const tbody = document.querySelector(".tbody-grilla");
+        const filas = tbody.querySelectorAll("tr:not(.fila-agregar)"); // todas excepto la de agregar
+        filas.forEach(fila => fila.remove());
+
+        // --- Agregar una fila vacía inicial ---
+        const nuevaFila = document.createElement("tr");
+        nuevaFila.innerHTML = `
+            <td data-label="Gasto"><input type="text" class="gasto"></td>
+            <td data-label="Moneda"><input type="text" class="moneda"></td>
+            <td data-label="Monto"><input type="text" class="monto"></td>
+            <td data-label="Comparte"><input type="checkbox" class="comparte"></td>
+        `;
+        tbody.insertBefore(nuevaFila, tbody.querySelector(".fila-agregar")); // justo antes de la fila de agregar
     });
 
     // --- Botón salir: redirigir ---
